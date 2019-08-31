@@ -2,35 +2,35 @@ from display_functions import *
 import position_functions
 import background_colors as background
 import time
+import os
 
 
 def clear():
-    import os
+    # print('\n' * 100)
     os.system('clear')
 
-display = create_display(5, 3, background.red+' ')
-clear()
-show_display_matrix(display)
-time.sleep(0.1)
-display[1][1] = background.pink + ' '
-clear()
-show_display_matrix(display)
-time.sleep(0.1)
-display[1][3] = background.pink + ' '
-clear()
-show_display_matrix(display)
+def funcao_afim(a, b, display):
+    print(MIDDLE_X)
+    for x in range(-1*MIDDLE_X, 0, -1):
+        y = a*x +  b
+        cord = position_functions.cartesian_position(x, y, display)
+        display[cord[1]][cord[0]] = background.yellow + ' '
+        time.sleep(0.1)
+        show_display_matrix(display)
 
-cord = position_functions.cartesian_position(1, -1, display)
-display[cord[1]][cord[0]] = background.yellow + ' '
-time.sleep(0.1)
-clear()
-show_display_matrix(display)
-
-y = position_functions.MIDDLE_Y
-for x in range(0, position_functions.MIDDLE_X+1):
-   cord = position_functions.cartesian_position(x, y, display)
-   display[cord[1]][cord[0]] = background.yellow + ' '
-   time.sleep(0.1)
-   clear()
-   show_display_matrix(display)
+display = create_display(80, 20, background.red+' ')
+position_functions.set_variables(display)
+MIDDLE_X = position_functions.MIDDLE_X
+MIDDLE_Y = position_functions.MIDDLE_Y
+a = 1 
+b = 0
+for x in range(-1*MIDDLE_X, MIDDLE_X):
+    y = a*x + b
+    if abs(y) >= MIDDLE_Y or abs(x) >= MIDDLE_X:
+        continue
+    cord = position_functions.cartesian_position(x, y, display)
+    display[cord[1]][cord[0]] = background.yellow + ' '
+    time.sleep(0.3)
+    clear()
+    show_display_matrix(display)
 
