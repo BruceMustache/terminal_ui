@@ -20,5 +20,9 @@ display[1][3] = background.pink + ' '
 clear()
 show_display_matrix(display)
 
-position_functions.cartesian_position(None, None, display)
+cord = position_functions.cartesian_position(1, -1, display)
+display[cord[1]][cord[0]] = background.yellow + ' '
+time.sleep(1)
+clear()
+show_display_matrix(display)
 
