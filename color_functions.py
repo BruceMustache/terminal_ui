@@ -15,3 +15,6 @@ def background(color_id):
     parameter = str(BACKGROUND_ID) + str(color_id)
     return color(parameter)
 
+def reset():
+    return color()
+
