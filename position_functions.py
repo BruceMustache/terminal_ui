@@ -1,29 +1,20 @@
 import display_functions
 
-WAS_SET = False
-MIDDLE_X = MIDDLE_Y = None
-WIDTH = HEIGHT = None
 
-def set_variables(display):
-    global WIDTH, HEIGHT
-    WIDTH = display_functions.get_width(display)
-    HEIGHT = display_functions.get_height(display)
+def calculate_middle_x(display):
+	width = display_functions.get_width(display)
+	return width // 2
 
-    global MIDDLE_X, MIDDLE_Y
-    MIDDLE_X = WIDTH // 2
-    MIDDLE_Y = HEIGHT // 2
-
-    global WAS_SET
-    WAS_SET = True
+def calculate_middle_y(display):
+	height = display_functions.get_height(display)
+	return height // 2
 
 def cartesian_position(x, y, display):
-    global WAS_SET
-    if not WAS_SET:
-        set_variables(display)
+	middle_x = calculate_middle_x(display)
+	middle_y = calculate_middle_y(display)
 
-    global MIDDLE_X, MIDDLE_Y
-    x += MIDDLE_X
-    y = MIDDLE_Y - y
+	x += middle_x
+	y = middle_y - y
 
-    return x, y
+	return x, y
 
