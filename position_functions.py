@@ -24,5 +24,6 @@ def cartesian_position(x, y, display):
     global MIDDLE_X, MIDDLE_Y
     x += MIDDLE_X
     y = MIDDLE_Y - y
+
     return x, y
 
