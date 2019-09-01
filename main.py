@@ -21,9 +21,21 @@ def funcao_afim(a, b, inputedColor, display):
 		display[cord[1]][cord[0]] = inputedColor + ' '
 
 
-display = create_display(80, 20, background.green+' ')
+display = create_display(81, 20, background.black+' ')
 position_functions.set_variables(display)
-funcao_afim(0, 0, background.red, display)
-funcao_afim(1, 2, background.yellow, display)
+
+# funcao_afim(0, 3, background.red, display)
+# funcao_afim(0, 0, background.blue, display)
+# funcao_afim(0, -3, background.red, display)
+
+funcao_afim(-1, -2, background.red, display)
+funcao_afim(1, 2, background.red, display)
+
+funcao_afim(1, 1, background.red, display)
+funcao_afim(-1, -1, background.red, display)
+
+funcao_afim(1, 0, background.yellow, display)
+funcao_afim(-1, 0, background.yellow, display)
+
 show_display_matrix(display)
 
