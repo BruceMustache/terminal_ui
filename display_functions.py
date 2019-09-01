@@ -1,9 +1,12 @@
 import color_functions
+import time
+import os
 
 
-def update():
-    # TODO add a function as parameter
-    show_display_matrix()
+def update_display_and_wait_seconds(seconds, display):
+	clear()
+	show_display_matrix(display)
+	time.sleep(seconds)
 
 def show_display_matrix(display):
     width = get_width(display)
@@ -34,4 +37,7 @@ def get_width(display):
 
 def get_height(display):
     return len(display)
+
+def clear():
+	os.system('clear')
 
