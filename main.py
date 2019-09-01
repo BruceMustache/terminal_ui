@@ -5,10 +5,6 @@ import time
 import os
 
 
-def clear():
-    # print('\n' * 100)
-    os.system('clear')
-
 def funcao_afim(a, b, inputedColor, display):
 	MIDDLE_X = position_functions.MIDDLE_X
 	MIDDLE_Y = position_functions.MIDDLE_Y
