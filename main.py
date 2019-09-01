@@ -8,16 +8,19 @@ waiting = 0.5
 
 funcao_afim(-1, -2, background.red, display)
 update_display_and_wait_seconds(waiting, display)
+
 funcao_afim(1, 2, background.red, display)
 update_display_and_wait_seconds(waiting, display)
 
 funcao_afim(1, 1, background.red, display)
 update_display_and_wait_seconds(waiting, display)
+
 funcao_afim(-1, -1, background.red, display)
 update_display_and_wait_seconds(waiting, display)
 
 funcao_afim(1, 0, background.yellow, display)
 update_display_and_wait_seconds(waiting, display)
+
 funcao_afim(-1, 0, background.yellow, display)
 update_display_and_wait_seconds(waiting, display)
 
